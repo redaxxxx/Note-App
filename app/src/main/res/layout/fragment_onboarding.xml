@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.OnboardingFragment"
+        android:background="@color/gray_light">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="@id/guidelineOnboardingUp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineOnboardingDown"
+            app:layout_constraintStart_toStartOf="@id/guidelineOnboardingLeft"
+            app:layout_constraintEnd_toEndOf="@id/guidelineOnboardingRight">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/ever_note_app"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save_and_share_notes"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/create_account_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_account"
+            android:backgroundTint="@color/purple"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="bottom"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@id/have_an_account_tv"
+            app:layout_constraintLeft_toLeftOf="@id/guidelineOnboardingLeft"
+            app:layout_constraintRight_toRightOf="@id/guidelineOnboardingRight" />
+
+        <TextView
+            android:id="@+id/have_an_account_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/have_an_account_log_in"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineOnboardingDown"
+            app:layout_constraintStart_toStartOf="@id/guidelineOnboardingLeft"
+            app:layout_constraintEnd_toEndOf="@id/guidelineOnboardingRight"
+            android:gravity="center" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineOnboardingLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05109489" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineOnboardingRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94890511" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineOnboardingUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02872777" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineOnboardingDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.97127223" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

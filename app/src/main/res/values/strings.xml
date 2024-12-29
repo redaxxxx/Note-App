@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">EverNote</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ever_note_app"><font color="#6B4EFF">Ever-No</font>te App</string>
+    <string name="save_and_share_notes">Save and share notes</string>
+    <string name="create_account">Create account</string>
+    <string name="have_an_account_log_in">Have an account?<font color="#6B4EFF"> Log in</font></string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="log_in">Log in</string>
+    <string name="terms_tv">By continuing, you agree to our <font color="#6B4EFF">Terms of Service</font> and
+        <font color="#6B4EFF">Privacy Policy.</font></string>
+    <string name="user_name">User name</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="notes_tv">Notes</string>
+    <string name="title_test">Book Review : The Design of Everyday Things by Don Norman</string>
+</resources>
