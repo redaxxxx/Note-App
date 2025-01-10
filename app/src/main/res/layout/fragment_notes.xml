@@ -106,10 +106,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="@color/white"
+                app:tabBackground="@drawable/tab_layout_bg"
+                app:tabIndicatorHeight="0dp"
+                app:tabGravity="center"
                 app:tabIndicator="@null"
                 app:tabMode="scrollable"
                 app:tabRippleColor="@color/white"
-                app:tabSelectedTextColor="@color/black" />
+                app:tabSelectedTextColor="@color/white" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
