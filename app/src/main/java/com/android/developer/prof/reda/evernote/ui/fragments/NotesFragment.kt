@@ -42,6 +42,10 @@ class NotesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.addNoteBtn.setOnClickListener {
+
+        }
+
         val dateAdapter = DateAdapter()
         dateAdapter.submitList(getCurrentDate())
         binding.dateRv.adapter = dateAdapter

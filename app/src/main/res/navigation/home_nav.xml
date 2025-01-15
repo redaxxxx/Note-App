@@ -9,5 +9,15 @@
         android:id="@+id/notesFragment"
         android:name="com.android.developer.prof.reda.evernote.ui.fragments.NotesFragment"
         android:label="NotesFragment"
-        tools:layout="@layout/fragment_notes"/>
+        tools:layout="@layout/fragment_notes">
+        <action
+            android:id="@+id/action_notesFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.android.developer.prof.reda.evernote.ui.fragments.AddNoteFragment"
+        android:label="fragment_add_note"
+        tools:layout="@layout/fragment_add_note" />
+
 </navigation>
