@@ -10,9 +10,8 @@ enum class Category{ Important, LectureNotes, ToDoList, ShoppingList }
 
 @Entity(tableName = "noteInfo")
 data class Note (
-    @PrimaryKey(autoGenerate = true)
-    val idNote: Int,
+    val idNote: String,
     val title: String,
     val content: String,
-    val category: Category
+    val category: String
 )

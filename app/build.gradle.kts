@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
+    id ("androidx.navigation.safeargs")
 }
 
 android {
@@ -72,4 +73,6 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
 
+    // Logging
+    implementation ("com.jakewharton.timber:timber:5.0.1")
 }

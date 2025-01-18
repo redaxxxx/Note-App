@@ -48,6 +48,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/important_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -73,6 +74,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lecture_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -98,6 +100,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/todo_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -123,6 +126,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/shopping_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

@@ -18,6 +18,19 @@
         android:id="@+id/addNoteFragment"
         android:name="com.android.developer.prof.reda.evernote.ui.fragments.AddNoteFragment"
         android:label="fragment_add_note"
-        tools:layout="@layout/fragment_add_note" />
+        tools:layout="@layout/fragment_add_note" >
+        <action
+            android:id="@+id/action_addNoteFragment_to_addNewNoteFragment"
+            app:destination="@id/addNewNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewNoteFragment"
+        android:name="com.android.developer.prof.reda.evernote.ui.fragments.AddNewNoteFragment"
+        android:label="AddNewNoteFragment"
+        tools:layout="@layout/fragment_add_new_note">
+        <argument
+            android:name="category"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

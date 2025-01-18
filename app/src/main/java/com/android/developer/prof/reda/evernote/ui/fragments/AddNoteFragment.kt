@@ -6,9 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.android.developer.prof.reda.evernote.R
 import com.android.developer.prof.reda.evernote.databinding.FragmentAddNoteBinding
+import com.android.developer.prof.reda.evernote.utils.IMPORTANT
+import com.android.developer.prof.reda.evernote.utils.LECTURE_NOTES
+import com.android.developer.prof.reda.evernote.utils.SHOPPING_LIST
+import com.android.developer.prof.reda.evernote.utils.TODO_LIST
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddNoteFragment : Fragment() {
     private lateinit var binding: FragmentAddNoteBinding
     override fun onCreateView(
@@ -29,6 +36,29 @@ class AddNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.importantLayout.setOnClickListener {
+            findNavController().navigate(
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(IMPORTANT)
+            )
+        }
+
+        binding.lectureLayout.setOnClickListener {
+            findNavController().navigate(
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(LECTURE_NOTES)
+            )
+        }
+
+        binding.todoLayout.setOnClickListener {
+            findNavController().navigate(
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(TODO_LIST)
+            )
+        }
+
+        binding.shoppingLayout.setOnClickListener {
+            findNavController().navigate(
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(SHOPPING_LIST)
+            )
+        }
     }
 
 }

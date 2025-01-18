@@ -17,12 +17,13 @@ import com.android.developer.prof.reda.evernote.ui.fragments.categories.LectureN
 import com.android.developer.prof.reda.evernote.ui.fragments.categories.ShoppingFragment
 import com.android.developer.prof.reda.evernote.ui.fragments.categories.ToDoListsFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 
+@AndroidEntryPoint
 class NotesFragment : Fragment() {
 
     private lateinit var binding: FragmentNotesBinding
-    private val currentMonthDates = mutableListOf<LocalDate>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

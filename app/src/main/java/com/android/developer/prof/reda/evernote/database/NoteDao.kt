@@ -6,20 +6,25 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.android.developer.prof.reda.evernote.models.Category
 import com.android.developer.prof.reda.evernote.models.Note
 
 @Dao
 interface NoteDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(note: Note)
+    fun upsert(note: Note)
 
     @Query("SELECT * FROM noteInfo")
-    suspend fun getAllNotes(): LiveData<List<Note>>
+    fun getAllNotes(): LiveData<List<Note>>
 
     @Query("SELECT * FROM noteInfo WHERE idNote=:id")
-    suspend fun getNoteById(id: Int): LiveData<Note>
+    fun getNoteById(id: Int): LiveData<Note>
+
+    @Query("SELECT * FROM noteInfo WHERE category=:category")
+    fun getNotesByCategory(category: Category): LiveData<List<Note>>
 
     @Delete
-    suspend fun deleteNote(note: Note)
+    fun deleteNote(note: Note)
+
 }
