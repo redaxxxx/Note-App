@@ -7,18 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.android.developer.prof.reda.evernote.R
+import com.android.developer.prof.reda.evernote.databinding.FragmentAddNewNoteBinding
 import com.android.developer.prof.reda.evernote.databinding.FragmentAddNoteBinding
 
-class AddNoteFragment : Fragment() {
-    private lateinit var binding: FragmentAddNoteBinding
+class AddNewNoteFragment : Fragment() {
+    private lateinit var binding: FragmentAddNewNoteBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-
+    ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_add_note,
+            R.layout.fragment_add_new_note,
             container,
             false
         )
@@ -30,5 +30,4 @@ class AddNoteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
-
 }
