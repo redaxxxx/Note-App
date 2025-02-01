@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.android.developer.prof.reda.evernote.R
 import com.android.developer.prof.reda.evernote.databinding.FragmentAddNoteBinding
+import com.android.developer.prof.reda.evernote.models.Note
 import com.android.developer.prof.reda.evernote.utils.IMPORTANT
 import com.android.developer.prof.reda.evernote.utils.LECTURE_NOTES
 import com.android.developer.prof.reda.evernote.utils.SHOPPING_LIST
@@ -36,27 +37,39 @@ class AddNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.arrowBackBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         binding.importantLayout.setOnClickListener {
             findNavController().navigate(
-                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(IMPORTANT)
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(
+                    Note("","","",IMPORTANT)
+                )
             )
         }
 
         binding.lectureLayout.setOnClickListener {
             findNavController().navigate(
-                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(LECTURE_NOTES)
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(
+                    Note("","","", LECTURE_NOTES)
+                )
             )
         }
 
         binding.todoLayout.setOnClickListener {
             findNavController().navigate(
-                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(TODO_LIST)
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(
+                    Note("","","", TODO_LIST)
+                )
             )
         }
 
         binding.shoppingLayout.setOnClickListener {
             findNavController().navigate(
-                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(SHOPPING_LIST)
+                AddNoteFragmentDirections.actionAddNoteFragmentToAddNewNoteFragment(
+                    Note("","","", SHOPPING_LIST)
+                )
             )
         }
     }

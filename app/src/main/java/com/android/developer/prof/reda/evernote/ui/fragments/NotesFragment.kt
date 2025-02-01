@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.android.developer.prof.reda.evernote.R
 import com.android.developer.prof.reda.evernote.adapters.DateAdapter
 import com.android.developer.prof.reda.evernote.adapters.ViewPagerAdapter
@@ -16,6 +18,7 @@ import com.android.developer.prof.reda.evernote.ui.fragments.categories.Importan
 import com.android.developer.prof.reda.evernote.ui.fragments.categories.LectureNotesFragment
 import com.android.developer.prof.reda.evernote.ui.fragments.categories.ShoppingFragment
 import com.android.developer.prof.reda.evernote.ui.fragments.categories.ToDoListsFragment
+import com.android.developer.prof.reda.evernote.viewModels.NoteViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
@@ -24,7 +27,6 @@ import java.time.LocalDate
 class NotesFragment : Fragment() {
 
     private lateinit var binding: FragmentNotesBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,7 +46,7 @@ class NotesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.addNoteBtn.setOnClickListener {
-
+            findNavController().navigate(NotesFragmentDirections.actionNotesFragmentToAddNoteFragment())
         }
 
         val dateAdapter = DateAdapter()

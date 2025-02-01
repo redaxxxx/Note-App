@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.android.developer.prof.reda.evernote.models.Note
 import com.android.developer.prof.reda.evernote.repositories.NoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -15,13 +16,18 @@ class NoteViewModel @Inject constructor(
 ): ViewModel() {
 
     val allNotes: LiveData<List<Note>> = repository.allNotes
-
-    fun upsert(note: Note){
-        viewModelScope.launch {
-            repository.upsertNote(note)
+    private lateinit var notesByCategory: LiveData<List<Note>>
+    fun insertNote(note: Note){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.insertNote(note)
         }
     }
 
+    fun updateNote(note: Note){
+        viewModelScope.launch {
+            repository.updateNote(note)
+        }
+    }
     fun delete(note: Note){
         viewModelScope.launch {
             repository.deleteNote(note)
@@ -32,5 +38,12 @@ class NoteViewModel @Inject constructor(
         viewModelScope.launch {
             repository.getNoteById(id)
         }
+    }
+
+    fun getNotesByCategory(category: String): LiveData<List<Note>>{
+        viewModelScope.launch {
+            notesByCategory = repository.getNotesByCategory(category)
+        }
+        return notesByCategory
     }
 }

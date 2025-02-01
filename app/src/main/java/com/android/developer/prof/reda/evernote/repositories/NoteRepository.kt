@@ -9,10 +9,13 @@ class NoteRepository @Inject constructor(private val noteDao: NoteDao) {
 
     val allNotes: LiveData<List<Note>> = noteDao.getAllNotes()
 
-    suspend fun upsertNote(note: Note){
-        noteDao.upsert(note)
+    suspend fun insertNote(note: Note){
+        return noteDao.insert(note)
     }
 
+    suspend fun updateNote(note: Note): Int{
+        return noteDao.updateNote(note)
+    }
     suspend fun getAllNotes(){
         noteDao.getAllNotes()
     }
@@ -23,5 +26,9 @@ class NoteRepository @Inject constructor(private val noteDao: NoteDao) {
 
     suspend fun deleteNote(note: Note){
         noteDao.deleteNote(note)
+    }
+
+    suspend fun getNotesByCategory(category: String): LiveData<List<Note>>{
+       return noteDao.getNotesByCategory(category)
     }
 }

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -73,6 +73,12 @@
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/gray_light"/>
             <LinearLayout
                 android:id="@+id/lecture_layout"
                 android:layout_width="match_parent"
@@ -99,6 +105,13 @@
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/gray_light"/>
+
             <LinearLayout
                 android:id="@+id/todo_layout"
                 android:layout_width="match_parent"
@@ -124,6 +137,13 @@
                     android:textStyle="bold"
                     android:layout_marginStart="8dp" />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/gray_light"/>
 
             <LinearLayout
                 android:id="@+id/shopping_layout"

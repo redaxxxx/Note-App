@@ -1,5 +1,6 @@
 package com.android.developer.prof.reda.evernote.adapters
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.text.Layout
@@ -14,13 +15,18 @@ import java.util.Random
 
 class NoteAdapter: ListAdapter<Note, NoteAdapter.NoteViewHolder>(DiffCallback) {
 
-    val random: Random = Random()
-    val colors = mutableListOf("#E3E5E5", "#FFD8F4", "#FCFAD9", "#B0E9CA", "#D9E8FC", "#FDE99D")
+    private val random: Random = Random()
+    private val colors = mutableListOf("#E3E5E5", "#FFD8F4", "#FCFAD9", "#B0E9CA", "#D9E8FC", "#FDE99D")
     inner class NoteViewHolder(private val binding: NoteItemBinding): ViewHolder(binding.root){
         fun bind(note: Note){
-            binding.noteLayout.setBackgroundColor(Color.parseColor(colors[random.nextInt()]))
+
+            binding.cardView.setCardBackgroundColor(Color.parseColor(colors[random.nextInt(6)]))
             binding.noteTitle.text = note.title
             binding.noteDescription.text = note.content
+
+            itemView.setOnClickListener {
+                onClickItem?.invoke(note)
+            }
         }
     }
 
@@ -47,4 +53,6 @@ class NoteAdapter: ListAdapter<Note, NoteAdapter.NoteViewHolder>(DiffCallback) {
         val note = getItem(position)
         holder.bind(note)
     }
+
+    var onClickItem: ((Note) -> Unit)? = null
 }

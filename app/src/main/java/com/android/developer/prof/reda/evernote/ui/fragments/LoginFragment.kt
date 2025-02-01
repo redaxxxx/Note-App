@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.android.developer.prof.reda.evernote.R
 import com.android.developer.prof.reda.evernote.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class LoginFragment : Fragment() {
 

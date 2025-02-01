@@ -105,7 +105,7 @@
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:background="@color/white"
                 app:tabBackground="@drawable/tab_layout_bg"
                 app:tabIndicatorHeight="0dp"
